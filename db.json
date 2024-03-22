@@ -1,0 +1,16 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "Stannis Baratheon"
+    },
+    {
+      "id": 2,
+      "name": "Maekar Targaryen"
+    },
+    {
+      "id": 3,
+      "name": "Jon Snow"
+    }
+  ]
+}

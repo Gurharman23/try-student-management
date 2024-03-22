@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "json-server": "^0.17.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "scripts": {
+    "start-json-server": "json-server db.json --p 8000"
+  }
+}
