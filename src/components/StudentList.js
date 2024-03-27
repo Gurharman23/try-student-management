@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { getStudents } from "./student-helpers";
+import { getStudents } from "../student-helpers";
+import { StudentCard } from "./StudentCard";
 
 export const StudentList = () => {
   const [students, setStudents] = useState([]);
@@ -9,10 +10,10 @@ export const StudentList = () => {
 
   return (
     <div>
+      <h1>STUDENTS LIST</h1>
       {students.map(({ id, name }) => (
         <div key={id}>
-          {" "}
-          id: {id} Name: {name}
+          <StudentCard id={id} name={name} />
         </div>
       ))}
     </div>
