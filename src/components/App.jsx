@@ -1,7 +1,6 @@
 import React from "react";
-import { StudentList } from "./StudentList";
 import { Link } from "react-router-dom";
-
+import { StudentList } from "./StudentList.jsx";
 export const App = () => {
   return (
     <div>

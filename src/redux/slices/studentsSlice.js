@@ -1,12 +1,14 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { fetchStudents } from "../../student-api";
 
+const typePrefix = "students/fetchStudents";
+export const fetchStudentsThunk = createAsyncThunk(typePrefix, async () => {
+  return fetchStudents();
+});
 const students = createSlice({
   name: "students",
   initialState: [],
   reducers: {
-    studentsFetched: (state, { payload }) => {
-      return payload;
-    },
     studentCreated: (state, { payload }) => {
       state.push(payload);
     },
@@ -16,6 +18,11 @@ const students = createSlice({
       );
       state[studentIndex] = payload;
     },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(fetchStudentsThunk.fulfilled, (state, { payload }) => {
+      return payload;
+    });
   },
 });
 

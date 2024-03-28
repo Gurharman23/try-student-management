@@ -1,19 +1,15 @@
-import React, { useEffect, useState } from "react";
-import { getStudents } from "../student-helpers";
-import { StudentCard } from "./StudentCard";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { studentsFetched } from "../redux/slices/studentsSlice";
+import { fetchStudentsThunk } from "../redux/slices/studentsSlice";
+import { StudentCard } from "./StudentCard.jsx";
 
 export const StudentList = () => {
   const students = useSelector((state) => state.students);
   const dispatch = useDispatch();
-  useEffect(() => {
-    students.length ||
-      getStudents().then((data) => {
-        dispatch(studentsFetched(data));
-      });
-  }, []);
 
+  useEffect(() => {
+    students.length || dispatch(fetchStudentsThunk());
+  }, []);
   return (
     <div>
       <h1>STUDENTS LIST</h1>
