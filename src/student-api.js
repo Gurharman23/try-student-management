@@ -11,3 +11,11 @@ export const createStudent = (user) => {
     body: JSON.stringify(user),
   }).then((res) => res.json());
 };
+export const deleteStudent = (id) => {
+  return fetch(`${url}/${id}`, {
+    method: "DELETE",
+    headers: {
+      "content-type": "application/json",
+    },
+  }).then((res) => res.json());
+};

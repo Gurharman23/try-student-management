@@ -1,3 +1,6 @@
 .home{
     background-color: greenyellow;
 }
+.min-font-height {
+    min-height: 1em;
+  }

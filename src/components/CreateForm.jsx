@@ -18,14 +18,25 @@ export const CreateForm = () => {
     e.preventDefault();
   };
   return (
-    <div>
-      <h1>CreateForm</h1>
+    <div className="container d-flex flex-column justify-content-center mt-5">
+      <h1 className="text-center">CreateForm</h1>
       <form onSubmit={submitHandler}>
-        <div>
-          Name: <input type="text" name={"name"} />
-          Alias: <input type="text" name={"alias"} />
+        <div className="form-group">
+          <label className="form-label" for="name">
+            Name
+          </label>
+          <input className="form-control" type="text" name="name" id="name" />
         </div>
-        <button type="submit"> Submit </button>
+        <div>
+          <label className="form-label" for="alias">
+            Alias
+          </label>
+          <input className="form-control" type="text" name="alias" id="alias" />
+        </div>
+        <button className="btn btn-primary mt-3 w-100" type="submit">
+          {" "}
+          Submit{" "}
+        </button>
       </form>
     </div>
   );

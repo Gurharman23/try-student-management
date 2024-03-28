@@ -12,11 +12,10 @@ export const Home = () => {
     students.length || dispatch(fetchStudentsThunk());
   }, []);
   return (
-    <div>
-      Home
+    <div className="">
       <br />
       <Link to={"/create"}>
-        <button>Create New</button>
+        <button className="mb-3 w-100 btn btn-dark">Create New</button>
       </Link>
       <StudentList students={students} />
     </div>
