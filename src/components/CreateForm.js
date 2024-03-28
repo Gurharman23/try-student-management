@@ -1,14 +1,18 @@
 import React from "react";
 import { createStudent } from "../student-helpers";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { studentCreated } from "../redux/slices/studentsSlice";
 
 export const CreateForm = () => {
   const navigator = useNavigate();
+  const dispatch = useDispatch();
+
   const submitHandler = (e) => {
     const formData = new FormData(e.target);
     const formProps = Object.fromEntries(formData);
     createStudent(formProps).then((val) => {
-      alert("success" + val);
+      dispatch(studentCreated(val));
       navigator("/");
     });
     e.preventDefault();
