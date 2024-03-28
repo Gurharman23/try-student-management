@@ -1,15 +1,21 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import { StudentList } from "./StudentList.jsx";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchStudentsThunk } from "../redux/slices/studentsSlice.js";
+import { CreateForm } from "./CreateForm.jsx";
+import { Home } from "./Home.jsx";
 export const App = () => {
   return (
     <div>
       <div className="create-btn">
-        <Link to={"/create"}>
-          <button>Create New</button>
-        </Link>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/create" element={<CreateForm />} />
+          </Routes>
+        </BrowserRouter>
       </div>
-      <StudentList />
     </div>
   );
 };

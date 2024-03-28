@@ -1,5 +1,5 @@
 import React from "react";
-import { createStudent } from "../student-helpers";
+import { createStudent } from "../student-api";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { studentCreated } from "../redux/slices/studentsSlice";
@@ -22,7 +22,8 @@ export const CreateForm = () => {
       <h1>CreateForm</h1>
       <form onSubmit={submitHandler}>
         <div>
-          Name: <input name={"name"} />
+          Name: <input type="text" name={"name"} />
+          Alias: <input type="text" name={"alias"} />
         </div>
         <button type="submit"> Submit </button>
       </form>
