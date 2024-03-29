@@ -21,3 +21,5 @@ export const Home = () => {
     </div>
   );
 };
+
+Home.propTypes = {};

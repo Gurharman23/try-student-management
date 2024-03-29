@@ -1,9 +1,9 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { deleteStudentThunk } from "../redux/slices/studentsSlice";
+import PropTypes from "prop-types";
 
-// eslint-disable-next-line react/prop-types
-export const StudentCard = ({ id, name, alias }) => {
+export const StudentCard = ({ student: { id, name, alias } }) => {
   const dispatch = useDispatch();
   return (
     <>
@@ -24,4 +24,12 @@ export const StudentCard = ({ id, name, alias }) => {
       </div>
     </>
   );
+};
+
+StudentCard.propTypes = {
+  student: PropTypes.shape({
+    id: PropTypes.string,
+    name: PropTypes.string,
+    alias: PropTypes.string,
+  }).isRequired,
 };

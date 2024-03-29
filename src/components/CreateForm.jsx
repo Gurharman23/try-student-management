@@ -40,3 +40,5 @@ export const CreateForm = () => {
     </div>
   );
 };
+
+CreateForm.propTypes = {};
