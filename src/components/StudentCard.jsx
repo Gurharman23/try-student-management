@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { deleteStudentThunk } from "../redux/slices/studentsSlice";
 
+// eslint-disable-next-line react/prop-types
 export const StudentCard = ({ id, name, alias }) => {
   const dispatch = useDispatch();
   return (

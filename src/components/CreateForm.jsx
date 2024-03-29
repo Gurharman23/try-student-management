@@ -22,20 +22,19 @@ export const CreateForm = () => {
       <h1 className="text-center">CreateForm</h1>
       <form onSubmit={submitHandler}>
         <div className="form-group">
-          <label className="form-label" for="name">
+          <label className="form-label" htmlFor="name">
             Name
           </label>
           <input className="form-control" type="text" name="name" id="name" />
         </div>
         <div>
-          <label className="form-label" for="alias">
+          <label className="form-label" htmlFor="alias">
             Alias
           </label>
           <input className="form-control" type="text" name="alias" id="alias" />
         </div>
         <button className="btn btn-primary mt-3 w-100" type="submit">
-          {" "}
-          Submit{" "}
+          Submit
         </button>
       </form>
     </div>

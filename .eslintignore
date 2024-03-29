@@ -1,0 +1,14 @@
+# Ignore node_modules directory
+
+node_modules/
+
+# Ignore build output directories
+
+dist/
+build/
+
+# Ignore specific files
+
+server.js
+webpack.config.js
+.eslintrc.js

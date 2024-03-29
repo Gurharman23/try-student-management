@@ -17,16 +17,6 @@
       "id": 4
     },
     {
-      "id": 5
-    },
-    {
-      "id": 6
-    },
-    {
-      "name": "Arya",
-      "id": 7
-    },
-    {
       "name": "Benjen Stark",
       "id": 8
     },
@@ -99,41 +89,9 @@
       "id": 27
     },
     {
-      "name": "cc",
-      "id": 28
-    },
-    {
-      "name": "Robb",
-      "id": 29
-    },
-    {
-      "name": "some name",
-      "id": 30
-    },
-    {
-      "name": "sadfasdf",
-      "alias": "",
-      "id": 31
-    },
-    {
-      "name": "afds",
-      "alias": "fa",
-      "id": 33
-    },
-    {
-      "name": "adsf",
-      "alias": "afdsf",
-      "id": 34
-    },
-    {
-      "name": "fdsa",
-      "alias": "safds",
-      "id": 37
-    },
-    {
-      "name": "safd",
-      "alias": "sdafds",
-      "id": 38
+      "name": "Iliriyo Mopatis",
+      "alias": "The cheese monger",
+      "id": 39
     }
   ]
 }

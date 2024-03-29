@@ -1,8 +1,5 @@
-import React, { useEffect } from "react";
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
-import { StudentList } from "./StudentList.jsx";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchStudentsThunk } from "../redux/slices/studentsSlice.js";
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { CreateForm } from "./CreateForm.jsx";
 import { Home } from "./Home.jsx";
 export const App = () => {
