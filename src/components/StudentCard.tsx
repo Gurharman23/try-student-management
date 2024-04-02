@@ -1,9 +1,10 @@
-import React from "react";
+import * as React from "react"
 import { useDispatch } from "react-redux";
 import { deleteStudentThunk } from "../redux/slices/studentsSlice";
-import PropTypes from "prop-types";
+import * as PropTypes from "prop-types";
+import { Student } from "../types";
 
-export const StudentCard = ({ student: { id, name, alias } }) => {
+export const StudentCard = ({ student: { id, name, alias }  }: { student: Student} ) => {
   const dispatch = useDispatch();
   return (
     <>

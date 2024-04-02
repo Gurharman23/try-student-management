@@ -1,5 +1,5 @@
 import React from "react";
-import { StudentCard } from "./StudentCard.jsx";
+import { StudentCard } from "./StudentCard.tsx";
 import PropTypes from "prop-types";
 
 export const StudentList = ({ students }) => {

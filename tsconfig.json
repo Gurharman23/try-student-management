@@ -2,11 +2,16 @@
     "compilerOptions": {
         "outDir": "./dist/",        // path to output directory
         "sourceMap": true,          // allow sourcemap support
-        "strictNullChecks": true,   // enable strict null checks as a best practice
         "module": "es6",            // specify module code generation
         "jsx": "react",             // use typescript to transpile jsx to js
         "target": "es5",            // specify ECMAScript target version
-        "allowJs": true             // allow a partial TypeScript and JavaScript codebase
+        "allowJs": true,        // allow a partial TypeScript and JavaScript codebase
+        "noImplicitAny": true,   // no implict "any" type inferred if type is not explicty defined
+        "noImplicitReturns": true,     // prevents you from forgetting to return at the end of a function.
+        "noFallthroughCasesInSwitch": true,  //which is helpful if you never want to forget a break statement between cases in a switch block.
+        "noEmitOnError": true, // no build on error in tsc compilier
+        "strictNullChecks": true,   // enable strict null checks as a best practice
+        "noImplicitThis": true, //error when this is used without an explicit (or inferred) type
 
     },
     "include": [
