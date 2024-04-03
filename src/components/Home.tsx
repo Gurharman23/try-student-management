@@ -1,15 +1,16 @@
 import React, { useEffect } from "react";
-import { StudentList } from "./StudentList.jsx";
+import { StudentList } from "./StudentList";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchStudentsThunk } from "../redux/slices/studentsSlice";
 import { Link } from "react-router-dom";
+import { UnknownAction } from "@reduxjs/toolkit";
 
 export const Home = () => {
-  const students = useSelector((state) => state.students);
+  const students = useSelector((state: any) => state.students);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    students.length || dispatch(fetchStudentsThunk());
+    students.length || dispatch(fetchStudentsThunk() as unknown as UnknownAction);
   }, []);
   return (
     <div className="">

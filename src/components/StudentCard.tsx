@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { deleteStudentThunk } from "../redux/slices/studentsSlice";
 import * as PropTypes from "prop-types";
 import { Student } from "../types";
+import { UnknownAction } from "@reduxjs/toolkit";
 
 export const StudentCard = ({ student: { id, name, alias }  }: { student: Student} ) => {
   const dispatch = useDispatch();
@@ -17,7 +18,7 @@ export const StudentCard = ({ student: { id, name, alias }  }: { student: Studen
         <button
           className="btn btn-primary w-100"
           onClick={() => {
-            dispatch(deleteStudentThunk(id));
+            dispatch(deleteStudentThunk(id) as unknown as UnknownAction);
           }}
         >
           Delete

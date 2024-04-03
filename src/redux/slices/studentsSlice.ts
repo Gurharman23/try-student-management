@@ -1,14 +1,15 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { deleteStudent, fetchStudents } from "../../student-api";
+import { Student } from "../../types";
 
 const typePrefix = "students/fetchStudents";
 export const fetchStudentsThunk = createAsyncThunk(typePrefix, async () => {
-  return fetchStudents();
+  return await fetchStudents();
 });
 
 export const deleteStudentThunk = createAsyncThunk(
   "students/deleteStudent",
-  async (id) => {
+  async (id: string | number) => {
     await deleteStudent(id);
     return { id };
   }
@@ -16,14 +17,14 @@ export const deleteStudentThunk = createAsyncThunk(
 
 const students = createSlice({
   name: "students",
-  initialState: [],
+  initialState: [] as Student[],
   reducers: {
     studentCreated: (state, { payload }) => {
       state.push(payload);
     },
     studentUpdated: (state, { payload }) => {
       const studentIndex = state.findIndex(
-        (student) => student.id === payload.id
+        (student: Student) => student.id === payload.id
       );
       state[studentIndex] = payload;
     },
@@ -44,6 +45,5 @@ const students = createSlice({
   },
 });
 
-export const { studentsFetched, studentCreated, studentUpdated } =
-  students.actions;
+export const { studentCreated, studentUpdated } = students.actions;
 export default students.reducer;

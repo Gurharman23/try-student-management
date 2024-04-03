@@ -1,8 +1,9 @@
-import React from "react";
-import { StudentCard } from "./StudentCard.tsx";
-import PropTypes from "prop-types";
+import * as React from "react";
+import * as PropTypes from "prop-types";
+import { Student } from "../types";
+import { StudentCard } from "./StudentCard";
 
-export const StudentList = ({ students }) => {
+export const StudentList = ({ students } : {students: Student[]}) => {
   return (
     <>
       <h2 className="mb-0">STUDENTS LIST</h2>
