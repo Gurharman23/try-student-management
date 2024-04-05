@@ -1,5 +1,11 @@
+export type Id = string | number;
 export interface Student {
-  id: string | number;
+  id: Id;
   name: string;
   alias: string;
+}
+export interface UpdateStudent {
+  id: Id;
+  name?: string;
+  alias?: string;
 }

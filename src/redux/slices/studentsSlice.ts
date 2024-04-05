@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { deleteStudent, fetchStudents } from "../../student-api";
-import { Student } from "../../types";
+import { deleteStudent, fetchStudents, updateStudent } from "../../student-api";
+import { Student, UpdateStudent } from "../../types";
 
 const typePrefix = "students/fetchStudents";
 export const fetchStudentsThunk = createAsyncThunk(typePrefix, async () => {
@@ -12,6 +12,13 @@ export const deleteStudentThunk = createAsyncThunk(
   async (id: string | number) => {
     await deleteStudent(id);
     return { id };
+  }
+);
+export const updateStudentThunk = createAsyncThunk(
+  "students/updateStudent",
+  async (data: UpdateStudent) => {
+    const updatedData = await updateStudent(data);
+    return updatedData;
   }
 );
 
@@ -40,6 +47,14 @@ const students = createSlice({
         if (indexToRemove !== -1) {
           state.splice(indexToRemove, 1);
         }
+      }
+    );
+    builder.addCase(
+      updateStudentThunk.fulfilled,
+      (state, { payload: { id, ...rest } }) => {
+        const studentIndex = state.findIndex((student) => id === student.id);
+        if (studentIndex === -1) return;
+        state[studentIndex] = { id, ...rest };
       }
     );
   },

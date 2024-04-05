@@ -1,8 +1,9 @@
 {
   "students": [
     {
+      "name": "Stannis Baratheon",
       "id": 1,
-      "name": "Stannis Baratheon"
+      "alias": "The Rightful King"
     },
     {
       "id": 2,
@@ -71,10 +72,6 @@
     {
       "name": "Lother Frey",
       "id": 23
-    },
-    {
-      "name": "Donal Noyce",
-      "id": 24
     },
     {
       "name": "Jon Connigton",

@@ -3,13 +3,12 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: "development",
-  entry: "./src/index.jsx",
+  entry: "./src/index.tsx",
   output: {
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
   },
   resolve: {
-    // changed from extensions: [".js", ".jsx"]
     extensions: [".ts", ".tsx", ".js", ".jsx"],
   },
   devtool: "source-map",

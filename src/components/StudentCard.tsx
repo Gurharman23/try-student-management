@@ -4,6 +4,7 @@ import { deleteStudentThunk } from "../redux/slices/studentsSlice";
 import * as PropTypes from "prop-types";
 import { Student } from "../types";
 import { UnknownAction } from "@reduxjs/toolkit";
+import EditableField from "./EditableField";
 
 export const StudentCard = ({ student: { id, name, alias }  }: { student: Student} ) => {
   const dispatch = useDispatch();
@@ -11,8 +12,9 @@ export const StudentCard = ({ student: { id, name, alias }  }: { student: Studen
     <>
       <div className="card-body">
         <div className="d-flex justify-content-center">{id}</div>
-        <div className="min-font-height">{name}</div>
-        <div className="min-font-height">{alias}</div>
+        <EditableField id={id} fieldName="name" value={name} />
+        <EditableField id={id} fieldName="alias" value={alias} />
+
       </div>
       <div className="card-footer d-flex justify-content-center">
         <button
@@ -30,7 +32,7 @@ export const StudentCard = ({ student: { id, name, alias }  }: { student: Studen
 
 StudentCard.propTypes = {
   student: PropTypes.shape({
-    id: PropTypes.string,
+    id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     name: PropTypes.string,
     alias: PropTypes.string,
   }).isRequired,
